@@ -72,7 +72,7 @@ class Painel extends CI_Controller
 		 		$novoItem['PROD_IDPRODUTOS'] = $this->input->post('prod_pedido');
 		 		$novoItem['QTD_ITENS'] = $this->input->post('qtd_pedido');
 		 		$novoItem['VALOR_UNIT'] = $this->input->post('valor_unit');
-		 		$novoItem['PED_IDPEDIDOS'] = $this->painel_model->getIdPedido();
+		 		$novoItem['PED_IDPEDIDOS'] = $this->painel_model->insertPedido($novoPedido);
 
 		 		$this->painel_model->insertItem($novoItem);
 			}

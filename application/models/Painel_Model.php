@@ -33,14 +33,8 @@ class Painel_Model extends CI_Model
 		public function insertPedido($novoPedido)
 		{
 			$query = $this->db->insert('pedidos', $novoPedido);
+			return $this->db->insert_id();
 
-		}
-
-		public function getIdPedido()
-		{
-			$this->db->select_max('ID_PEDIDOS');
-			$query = $this->db->get('pedidos');
-			return $query->row();
 		}
 
 		public function insertItem($novoItem)
