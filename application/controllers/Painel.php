@@ -67,13 +67,13 @@ class Painel extends CI_Controller
 				    'DATA_LANCAMENTO' => $this->input->post('data_pedido'),
 			    );	
 		 		
-		
-
 		 		$novoItem['PROD_IDPRODUTOS'] = $this->input->post('prod_pedido');
 		 		$novoItem['QTD_ITENS'] = $this->input->post('qtd_pedido');
 		 		$novoItem['VALOR_UNIT'] = $this->input->post('valor_unit');
+		 		$novoItem['VALOR_SUB'] = $novoItem['QTD_ITENS'] * $novoItem['VALOR_UNIT'];
 		 		$novoItem['PED_IDPEDIDOS'] = $this->painel_model->insertPedido($novoPedido);
 
 		 		$this->painel_model->insertItem($novoItem);
+		 		$this->listaPedido();
 			}
 	}
