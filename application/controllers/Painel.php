@@ -42,6 +42,17 @@ class Painel extends CI_Controller
 				$this->listaFornecedor();
 			}
 
+		public function deleteFornecedor()
+			{
+				if(isset($_POST['delete_fornecedor']))
+				{
+					$fornecedor = $this->input->post('cnpj_fornecedor');	
+					$this->painel_model->deleteFornecedor($fornecedor);
+				}
+
+				$this->listaFornecedor();
+			}
+
 		
 		//CARREGA OS DROPDOWN DO FORM - PEDIDOS
 		public function listaPedido()

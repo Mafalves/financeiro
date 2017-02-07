@@ -13,7 +13,13 @@ class Painel_Model extends CI_Model
 			{
 				$query = $this->db->get('fornecedores');
 				return $query->result();
-			}	
+			}
+
+		public function deleteFornecedor($fornecedor)
+		{
+			$this->db->where('CNPJ', $fornecedor);
+			$this->db->delete('fornecedores');
+		}
 
 		//LISTA - PRODUTOS
 		public function readProduto()
@@ -41,4 +47,5 @@ class Painel_Model extends CI_Model
 		{
 			$query = $this->db->insert('itens', $novoItem);
 		}
+
 	}

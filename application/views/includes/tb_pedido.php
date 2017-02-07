@@ -6,6 +6,7 @@
       <th class="tb_num">Valor</th>
       <th class="tb_num">Lançamento</th>
       <th class="tb_str">Fornecedor</th>
+      <th class="tb_str">Ação</th>
  </thead>
  <tbody>
       <tr class="tb_row">
